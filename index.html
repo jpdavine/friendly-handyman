@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friendly Handyman — Handyman Services, Bellarine Peninsula</title>
+  <meta name="description" content="Friendly Handyman provides reliable, honest qualified & insured trade work across the Bellarine Peninsula. Based in St Leonards, we handle everything from general repairs and maintenance to carpentry, fencing, and flat-pack assembly. No job too small, straightforward estimates, quality work, and a friendly face you can trust to get it done right." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:     #1C2431;
+      --warm:    #F8F6F2;
+      --mid:     #E8E4DC;
+      --brass:   #C9A84C;
+      --brass-dk:#A8872F;
+      --muted:   #6B7280;
+      --serif:   'DM Serif Display', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--warm);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--warm);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-logo span { color: var(--brass); }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul a {
+      color: var(--mid);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--brass); }
+
+    .nav-cta {
+      background: var(--brass);
+      color: var(--ink) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--brass-dk) !important; color: var(--warm) !important; }
+
+    /* TICKER */
+    .ticker-wrap {
+      margin-top: 64px;
+      background: var(--brass);
+      overflow: hidden;
+      padding: 0.6rem 0;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker-track:hover { animation-play-state: paused; }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink);
+      white-space: nowrap;
+      padding: 0 2.5rem;
+    }
+
+    .ticker-dot {
+      color: var(--ink);
+      opacity: 0.4;
+      padding: 0 0.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--ink);
+      color: var(--warm);
+      padding: 7rem 5% 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--brass);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: #B8B4AC;
+      max-width: 38ch;
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--brass);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--brass-dk); color: var(--warm); }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1.5px solid #4A5568;
+      color: var(--mid);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      margin-left: 1rem;
+    }
+
+    .btn-outline:hover { border-color: var(--brass); color: var(--brass); }
+
+    .hero-card {
+      background: #232D3F;
+      border-radius: 8px;
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .hero-card-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .hero-stat {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      color: var(--warm);
+      line-height: 1;
+    }
+
+    .hero-stat small {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: #8892A4;
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    .hero-divider {
+      border: none;
+      border-top: 1px solid #2E3A4E;
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      color: #8892A4;
+    }
+
+    .hero-tag strong { color: var(--warm); font-weight: 500; }
+
+    /* SECTION SHARED */
+    section { padding: 5rem 5%; }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 3rem;
+    }
+
+    /* SERVICES */
+    .services { background: var(--warm); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--mid);
+      border-top: 3px solid var(--brass);
+      border-radius: 6px;
+      padding: 1.8rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--brass);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.1);
+    }
+
+    .service-icon {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* HOW IT WORKS */
+    .process { background: var(--ink); color: var(--warm); }
+
+    .process .section-eyebrow { color: var(--brass); }
+    .process .section-heading { color: var(--warm); }
+    .process .section-sub { color: #8892A4; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .process-step {
+      position: relative;
+      padding-top: 1.2rem;
+      border-top: 2px solid #2E3A4E;
+    }
+
+    .process-step.active-step { border-top-color: var(--brass); }
+
+    .step-num {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      color: #2E3A4E;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .active-step .step-num { color: var(--brass); opacity: 0.6; }
+
+    .process-step h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--warm);
+      margin-bottom: 0.4rem;
+    }
+
+    .process-step p {
+      font-size: 0.875rem;
+      color: #8892A4;
+      line-height: 1.6;
+    }
+
+    /* PORTFOLIO */
+    .portfolio { background: var(--mid); }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .portfolio-item {
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--ink);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .portfolio-item:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .portfolio-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: #232D3F;
+      color: #4A5568;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-placeholder span { font-size: 2rem; }
+
+    /* CONTACT */
+    .contact { background: var(--warm); }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-row a { color: var(--ink); text-decoration: none; font-weight: 600; }
+    .contact-row a:hover { color: var(--brass); }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid var(--mid);
+      border-radius: 4px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      background: #fff;
+      color: var(--ink);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: var(--brass);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .form-submit { margin-top: 0.5rem; }
+
+    .form-submit .btn-primary { width: 100%; text-align: center; font-size: 1rem; padding: 1rem; }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.3rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink);
+      color: #6B7A94;
+      text-align: center;
+      padding: 2rem 5%;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--brass); text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 5% 3.5rem;
+      }
+
+      .hero-card { display: none; }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .portfolio-item:first-child {
+        grid-column: span 1;
+        aspect-ratio: 4/3;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      nav ul { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Friendly Handyman <span>&#9642;</span></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact" class="nav-cta">Get an Estimate</a></li>
+    </ul>
+  </nav>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <!-- Two copies for seamless loop -->
+      <span class="ticker-item">Carpentry</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Decking</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Fencing</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Repairs &amp; Maintenance</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Shelving &amp; Fit-Out</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Doors &amp; Windows</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Car Services &amp; Repairs</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Appliance Repairs</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Bellarine Peninsula</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Carpentry</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Decking</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Fencing</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Repairs &amp; Maintenance</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Shelving &amp; Fit-Out</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Doors &amp; Windows</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Car Services &amp; Repairs</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Appliance Repairs</span><span class="ticker-dot">&#9632;</span>
+      <span class="ticker-item">Bellarine Peninsula</span><span class="ticker-dot">&#9632;</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <p class="hero-eyebrow">Bellarine Peninsula &mdash; Local Trade</p>
+      <h1>Handy work done <em>well.</em></h1>
+      <p class="hero-sub">Qualified tradesperson available across the Bellarine Peninsula for general handyman work, repairs, carpentry, and small builds. No job too small, no corners cut.</p>
+      <a href="#contact" class="btn-primary">Request an Estimate</a>
+      <a href="#services" class="btn-outline">See Services</a>
+    </div>
+    <div class="hero-card">
+      <p class="hero-card-label">Trade Background</p>
+      <div class="hero-stat">Qualified Carpenter<small>+ Technical Trade Experience</small></div>
+      <hr class="hero-divider" />
+      <p class="hero-tag"><strong>Based in St Leonards</strong> &mdash; serving the Bellarine</p>
+      <hr class="hero-divider" />
+      <p class="hero-tag"><strong>ABN Registered</strong> &mdash; invoices provided</p>
+      <hr class="hero-divider" />
+      <p class="hero-tag"><strong>Prompt, reliable</strong> &mdash; communication upfront</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <p class="section-eyebrow">What I do</p>
+    <h2 class="section-heading">Handyman services across the Bellarine</h2>
+    <p class="section-sub">All work carried out to industry standards. Residential and small scale commercial.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Carpentry &amp; Timber Work</h3>
+        <p>Framing, decking, cladding, shelving, built-ins. Solid timber work to a trade finish.</p>
+      </div>
+      <div class="service-card">
+        <h3>Doors &amp; Windows</h3>
+        <p>Hanging doors, adjusting frames, installing locks and hardware, sealing drafts.</p>
+      </div>
+      <div class="service-card">
+        <h3>Repairs &amp; Maintenance</h3>
+        <p>Fixing what's broken before it gets worse. Gutters, fences, gates, floorboards, rot.</p>
+      </div>
+      <div class="service-card">
+        <h3>Flat-Pack &amp; Fit-Out</h3>
+        <p>Assembly, installation, mounting. Shelves, TV brackets, flat-pack furniture done right.</p>
+      </div>
+      <div class="service-card">
+        <h3>Fencing &amp; Gates</h3>
+        <p>New fencing, gate repairs, posts, rails. Timber and Colorbond work.</p>
+      </div>
+      <div class="service-card">
+        <h3>General Handyman</h3>
+        <p>If it involves tools and a bit of know-how, get in touch. Odd jobs welcome.</p>
+      </div>
+      <div class="service-card">
+        <h3>Car Services</h3>
+        <p>Technical trade experience working on vehicles. General maintenance, minor mechanical repairs, and pre-purchase inspections, with a specialty in pre-2010 vehicles.</p>
+      </div>
+      <div class="service-card">
+        <h3>Appliance Repairs</h3>
+        <p>Diagnosing and fixing household appliances. Washing machines, dryers, and more, often cheaper than replacing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="process" id="process">
+    <p class="section-eyebrow">How it works</p>
+    <h2 class="section-heading">Simple from first contact to finished job</h2>
+    <p class="section-sub">No chasing for updates, no vague estimates. Here's what to expect.</p>
+    <div class="process-steps">
+      <div class="process-step active-step">
+        <div class="step-num">1</div>
+        <h3>Send a message</h3>
+        <p>Use the form below or call. Describe the job and include a photo if you can.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">2</div>
+        <h3>Get a clear estimate &amp; payment schedule</h3>
+        <p>You'll get a straight answer on cost, timing, and how payment is structured. No surprises.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">3</div>
+        <h3>Job gets done</h3>
+        <p>I show up when I say I will and leave the site clean when I'm done.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">4</div>
+        <h3>Your satisfaction matters</h3>
+        <p>ABN invoices provided throughout. I'm not finished until you're happy with the result.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio" id="portfolio">
+    <p class="section-eyebrow">Recent work</p>
+    <h2 class="section-heading">Jobs completed on the Bellarine</h2>
+    <p class="section-sub">Add photos of completed work here. Real jobs, real results.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder">
+          Featured project photo
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder">
+          Project photo
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder">
+          Project photo
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div class="portfolio-placeholder">
+          Project photo
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get in touch</p>
+        <h2 class="section-heading">Request an estimate</h2>
+        <p>Based in St Leonards and available across the Bellarine Peninsula. Describe your job and I'll get back to you with an estimate — usually within a day.</p>
+        <div class="contact-detail">
+          <div class="contact-row">
+            <span>St Leonards, Bellarine Peninsula, VIC</span>
+          </div>
+          <div class="contact-row">
+            <a href="sms:+61422056003">0422 056 003</a>
+            <span class="contact-note">(text preferred &mdash; calls often missed due to spam)</span>
+          </div>
+          <div class="contact-row">
+            <a href="mailto:josh@friendlyhandyman.com.au">josh@friendlyhandyman.com.au</a>
+          </div>
+          <div class="contact-row">
+            <span>Mon–Fri, 9am–3pm. Weekend by arrangement.</span>
+          </div>
+        </div>
+      </div>
+      <form>
+        <div class="form-row">
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div>
+            <label for="phone">Phone (for text replies)</label>
+            <input type="tel" id="phone" name="phone" placeholder="Your mobile number" autocomplete="tel" />
+          </div>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div>
+          <label for="service">Type of work</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service</option>
+            <option>Carpentry &amp; Timber Work</option>
+            <option>Doors &amp; Windows</option>
+            <option>Repairs &amp; Maintenance</option>
+            <option>Flat-Pack &amp; Fit-Out</option>
+            <option>Fencing &amp; Gates</option>
+            <option>General Handyman</option>
+            <option>Car Services &amp; Repairs</option>
+            <option>Appliance Repairs</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Job description</label>
+          <textarea id="message" name="message" placeholder="Describe the job. A photo helps if you have one."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send Request</button>
+          <p class="form-note">ABN registered &mdash; invoices provided throughout the job.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Friendly Handyman &mdash; Local Trade, ABN Registered &mdash; Bellarine Peninsula, VIC &mdash; Built by <a href="https://electroniczoology.com" target="_blank">Electronic Zoology</a></p>
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = this.querySelector('button[type="submit"]');
+      btn.textContent = 'Under Construction';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      var note = this.querySelector('.form-note');
+      note.innerHTML = 'Online enquiries coming soon. For now, text <a href="sms:+61422056003" style="color:var(--brass);font-weight:600">0422 056 003</a> or email <a href="mailto:josh@friendlyhandyman.com.au" style="color:var(--brass);font-weight:600">josh@friendlyhandyman.com.au</a>';
+    });
+  </script>
+
+</body>
+</html>
