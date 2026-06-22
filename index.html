@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Friendly Handyman — Handyman Services, Bellarine Peninsula</title>
+  <title>Friendly Handyman - Handyman Services, Bellarine Peninsula</title>
   <meta name="description" content="Friendly Handyman provides reliable, honest qualified & insured trade work across the Bellarine Peninsula. Based in St Leonards, we handle everything from general repairs and maintenance to carpentry, fencing, and flat-pack assembly. No job too small, straightforward estimates, quality work, and a friendly face you can trust to get it done right." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -391,33 +391,70 @@
     .contact { background: var(--warm); }
 
     .contact-inner {
-      max-width: 600px;
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    .contact-info p {
+    .contact-inner .section-eyebrow,
+    .contact-inner .section-heading { text-align: center; }
+
+    .contact-intro {
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      max-width: 48ch;
+      margin: 0 auto 2.5rem;
+    }
+
+    .contact-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-action {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      background: var(--ink);
+      color: var(--warm);
+      text-decoration: none;
+      padding: 1.6rem 1.2rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+
+    .contact-action:hover { background: #232D3F; }
+
+    .contact-action-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brass);
+    }
+
+    .contact-action-value {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
     }
 
     .contact-detail {
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.6rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--mid);
     }
 
     .contact-row {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-row a { color: var(--ink); text-decoration: none; font-weight: 600; }
-    .contact-row a:hover { color: var(--brass); }
-
-    .contact-note {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
@@ -451,6 +488,9 @@
         aspect-ratio: 4/3;
       }
 
+      .contact-actions {
+        grid-template-columns: 1fr;
+      }
 
       nav ul { display: none; }
     }
@@ -500,7 +540,7 @@
   <!-- HERO -->
   <section class="hero">
     <div>
-      <p class="hero-eyebrow">Bellarine Peninsula &mdash; Local Trade</p>
+      <p class="hero-eyebrow">Bellarine Peninsula - Local Trade</p>
       <h1>Handy work done <em>well.</em></h1>
       <p class="hero-sub">Qualified tradesperson available across the Bellarine Peninsula for general handyman work, repairs, carpentry, and small builds. No job too small, no corners cut.</p>
       <a href="#contact" class="btn-primary">Request an Estimate</a>
@@ -510,11 +550,11 @@
       <p class="hero-card-label">Trade Background</p>
       <div class="hero-stat">Qualified Carpenter<small>+ Technical Trade Experience</small></div>
       <hr class="hero-divider" />
-      <p class="hero-tag"><strong>Based in St Leonards</strong> &mdash; serving the Bellarine</p>
+      <p class="hero-tag"><strong>Based in St Leonards</strong> - serving the Bellarine</p>
       <hr class="hero-divider" />
-      <p class="hero-tag"><strong>ABN Registered</strong> &mdash; invoices provided</p>
+      <p class="hero-tag"><strong>ABN Registered</strong> - invoices provided</p>
       <hr class="hero-divider" />
-      <p class="hero-tag"><strong>Prompt, reliable</strong> &mdash; communication upfront</p>
+      <p class="hero-tag"><strong>Prompt, reliable</strong> - communication upfront</p>
     </div>
   </section>
 
@@ -568,7 +608,7 @@
       <div class="process-step active-step">
         <div class="step-num">1</div>
         <h3>Send a message</h3>
-        <p>Use the form below or call. Describe the job and include a photo if you can.</p>
+        <p>Text or email with your job details. Include a photo if you can.</p>
       </div>
       <div class="process-step">
         <div class="step-num">2</div>
@@ -620,24 +660,32 @@
   <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-inner">
-      <div class="contact-info">
-        <p class="section-eyebrow">Get in touch</p>
-        <h2 class="section-heading">Request an estimate</h2>
-        <p>Based in St Leonards and available across the Bellarine Peninsula. Describe your job and I'll get back to you with an estimate — usually within a day.</p>
-        <div class="contact-detail">
-          <div class="contact-row">
-            <span>St Leonards, Bellarine Peninsula, VIC</span>
-          </div>
-          <div class="contact-row">
-            <a href="sms:+61422056003">0422 056 003</a>
-            <span class="contact-note">(text preferred &mdash; calls often missed due to spam)</span>
-          </div>
-          <div class="contact-row">
-            <a href="mailto:josh@friendlyhandyman.com.au">josh@friendlyhandyman.com.au</a>
-          </div>
-          <div class="contact-row">
-            <span>Mon–Fri, 9am–3pm. Weekend by arrangement.</span>
-          </div>
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-heading">Request an estimate</h2>
+      <p class="contact-intro">Based in St Leonards and available across the Bellarine Peninsula. Text or email with your job details and I'll get back to you with an estimate - usually within a day.</p>
+
+      <div class="contact-actions">
+        <a href="sms:+61422056003" class="contact-action">
+          <span class="contact-action-label">Text</span>
+          <span class="contact-action-value">0422 056 003</span>
+        </a>
+        <a href="mailto:josh@friendlyhandyman.com.au" class="contact-action">
+          <span class="contact-action-label">Email</span>
+          <span class="contact-action-value">josh@friendlyhandyman.com.au</span>
+        </a>
+      </div>
+
+      <p class="contact-note">Calls often missed due to spam - text gets through fastest.</p>
+
+      <div class="contact-detail">
+        <div class="contact-row">
+          <span>St Leonards, Bellarine Peninsula, VIC</span>
+        </div>
+        <div class="contact-row">
+          <span>Mon–Fri, 9am–3pm. Weekend by arrangement.</span>
+        </div>
+        <div class="contact-row">
+          <span>ABN registered - invoices provided throughout the job.</span>
         </div>
       </div>
     </div>
@@ -645,9 +693,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Friendly Handyman &mdash; Local Trade, ABN Registered &mdash; Bellarine Peninsula, VIC &mdash; Built by <a href="https://electroniczoology.com" target="_blank">Electronic Zoology</a></p>
+    <p>Friendly Handyman - Local Trade, ABN Registered - Bellarine Peninsula, VIC - Built by <a href="https://electroniczoology.com" target="_blank">Electronic Zoology</a></p>
   </footer>
-
 
 </body>
 </html>
